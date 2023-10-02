@@ -1,4 +1,8 @@
 import './custom.scss';
+import "./Navbar.css";
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import InputGroup from 'react-bootstrap/InputGroup';
 
 export default function Navbar() {
 	return (
@@ -15,18 +19,25 @@ export default function Navbar() {
 					The Cocktail NavBar
 				</a>
 
-				<form className='d-flex' role='search'>
-					<input
-						className='form-control me-2'
-						type='search'
-						placeholder='Find your cocktail'
-						aria-label='Search'
-					/>
-					<button className='btn btn-primary' type='submit'>
-						Search
-					</button>
-				</form>
+				<SearchBar />
 			</div>
 		</nav>
+	);
+}
+
+
+function SearchBar() {
+	return (
+		<InputGroup className='searchbar-nav'>
+			<Form.Control
+				type='text'
+				placeholder="Search drink..."
+				aria-label="Search drink..."
+				aria-describedby='basic-addon2'
+			/>
+			<Button variant='outline-secondary' id='button-addon2'>
+				Search
+			</Button>
+		</InputGroup>
 	);
 }
