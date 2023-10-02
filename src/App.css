@@ -37,3 +37,20 @@
     transform: rotate(360deg);
   }
 }
+
+/* Custom primary color */
+:root {
+  --primary-color: #D63384; /* Pink color */
+  --secondary-color: #F7D6E6 
+}
+
+/* Override Bootstrap's primary color variables */
+.btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+  background-color: darken(var(--primary-color), 10%);
+  border-color: darken(var(--primary-color), 10%);
+}
