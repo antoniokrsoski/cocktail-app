@@ -3,7 +3,8 @@
     font-size: 32px;
     font-style: normal;
     font-weight: 300;
-    line-height: 120%; /* 38.4px */
+    line-height: 120%;
+    /* 38.4px */
     margin-top: 50px;
 }
 
@@ -12,24 +13,31 @@
     margin-top: 20px;
     text-align: center;
     font-family: Calibri;
-    font-size: 16px;
+    font-size: 20px;
     font-style: normal;
     font-weight: 400;
-    line-height: 150%; /* 24px */
+    line-height: 150%;
+    /* 24px */
 }
 
 
-.carousel{
-    margin-top: 30px;
-    width: 40% !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
+.carousel {
+    margin-top: 20px;
+    position: relative;
+    aspect-ratio: 2;
+
 }
 
-.searchbar {
-    width: 30% !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
+.img-ratio {
+    width: 100%;
+    max-width: 100%;
+    aspect-ratio: 2;
+    object-fit: cover;
+    object-position: 100% 10%;
+}
+
+.searchbar-home {
+    margin-top: 20px;
+    position: relative;
+    width: 30vh !important;
 }

@@ -17,7 +17,11 @@ export default function Home() {
 						<br /> some cute description or welcome message or something on the
 						main page.
 					</p>
+				</div>
+				<div className="d-flex justify-content-center">
 					<SearchBar />
+				</div>
+				<div className="d-flex justify-content-center">
 					<CarouselSlide />
 				</div>
 			</div>
@@ -28,15 +32,15 @@ export default function Home() {
 function CarouselSlide() {
 	return (
 		<div className='carousel'>
-			<Carousel>
+			<Carousel slide={false}>
 				{CarouselItem(
-					'https://www.thecocktaildb.com/images/media/drink/5noda61589575158.jpg/preview'
+					'https://www.thecocktaildb.com/images/media/drink/5noda61589575158.jpg'
 				)}
 				{CarouselItem(
-					'https://www.thecocktaildb.com/images/media/drink/5noda61589575158.jpg/preview'
+					'https://www.thecocktaildb.com/images/media/drink/bry4qh1582751040.jpg'
 				)}
 				{CarouselItem(
-					'https://www.thecocktaildb.com/images/media/drink/5noda61589575158.jpg/preview'
+					'https://www.thecocktaildb.com/images/media/drink/loezxn1504373874.jpg'
 				)}
 			</Carousel>
 		</div>
@@ -44,10 +48,12 @@ function CarouselSlide() {
 }
 
 function CarouselItem(src) {
+	// will take in a drink, from the drink wwe will extract the image, name and other cool stuff
 	return (
 		<Carousel.Item>
-			<Image src={src} text='This is text' />
+			<Image className="img-ratio" src={src} text='This is text' />
 			<Carousel.Caption>
+				{/* title will become drink name and p element will include either ingridients or something */}
 				<h3>First slide label</h3>
 				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
 			</Carousel.Caption>
@@ -57,14 +63,15 @@ function CarouselItem(src) {
 
 function SearchBar() {
 	return (
-		<InputGroup className='searchbar'>
+		<InputGroup className='searchbar-home'>
 			<Form.Control
-				placeholder="Recipient's username"
-				aria-label="Recipient's username"
+				type='text'
+				placeholder="Search drink..."
+				aria-label="Search drink..."
 				aria-describedby='basic-addon2'
 			/>
 			<Button variant='outline-secondary' id='button-addon2'>
-				Button
+				Search
 			</Button>
 		</InputGroup>
 	);
