@@ -1,4 +1,8 @@
 import './custom.scss';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import InputGroup from 'react-bootstrap/InputGroup';
+import './Navbar.css';
 
 export default function Navbar() {
 	return (
