@@ -1,8 +1,8 @@
 import './App.css';
 import {useState, useEffect} from 'react';
 import Navbar from './Navbar';
-import Home from './Home.js';
-import CocktailList from './CocktailList';
+import { Outlet } from 'react-router-dom';
+
 
 function App() {
 	const [res, setRes] = useState();
@@ -23,21 +23,22 @@ function App() {
 
 	return (
 		<div className='App'>
-			<Navbar />
-			{/* {res ? (
-				<img src={res[0].strDrinkThumb + '/preview'} alt='margarita' />
-			) : (
-				<div>loading...</div>
-			)}
-			{res ? (
-				<div>{JSON.stringify(res[0].strInstructions)}</div>
-			) : (
-				<div>loading... 2</div>
-			)} */}
-			<Home />
-			<CocktailList></CocktailList>
+			<Navbar/>
+			<Outlet/>
 		</div>
 	);
 }
+
+
+{/* {res ? (
+	<img src={res[0].strDrinkThumb + '/preview'} alt='margarita' />
+) : (
+	<div>loading...</div>
+)}
+{res ? (
+	<div>{JSON.stringify(res[0].strInstructions)}</div>
+) : (
+	<div>loading... 2</div>
+)} */}
 
 export default App;
