@@ -3,6 +3,7 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import './Navbar.css';
+import fetchSearch from './fetchSearch';
 
 export default function Navbar() {
 	return (
@@ -28,16 +29,21 @@ export default function Navbar() {
 
 function SearchBar() {
 	return (
-		<InputGroup className='searchbar-nav'>
-			<Form.Control
-				type='text'
-				placeholder="Search drink..."
-				aria-label="Search drink..."
-				aria-describedby='basic-addon2'
-			/>
-			<Button variant='outline-secondary' id='button-addon2'>
-				Search
-			</Button>
-		</InputGroup>
+		<form>
+			<InputGroup className='searchbar-nav'>
+				<Form.Control
+					type='text'
+					placeholder="Search drink..."
+					aria-label="Search drink..."
+					aria-describedby='basic-addon2'
+				/>
+				<Button variant='outline-secondary' id='button-addon2'>
+					Search
+				</Button>
+			</InputGroup>
+		</form>
 	);
 }
+
+
+

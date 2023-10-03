@@ -6,9 +6,13 @@ import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import CocktailList from './CocktailList';
 import { useLoaderData } from "react-router-dom";
+import fetchSearch from './fetchSearch';
+import { useState } from 'react';
 
 export default function Home() {
 	const drinks = useLoaderData();
+	const [validated, setValidated] = useState(false);
+	const [searchQuery, setSearchQuery] = useState('');
 	return (
 		<>
 			<div className='container-fluid'>
@@ -23,7 +27,7 @@ export default function Home() {
 						</p>
 					</div>
 					<div className="d-flex justify-content-center">
-						<SearchBar />
+						<SearchBar validated={validated} setValidated={setValidated} searchQuery={searchQuery} setSearchQuery={setSearchQuery}/>
 					</div>
 					
 					<p className="text align-left">Recommended drinks</p>
@@ -61,19 +65,27 @@ function CarouselItem(drink) {
 	);
 }
 
-function SearchBar() {
+function SearchBar(props) {
 	return (
-		<InputGroup className='searchbar-home'>
-			<Form.Control
-				type='text'
-				placeholder="Search drink..."
-				aria-label="Search drink..."
-				aria-describedby='basic-addon2'
-			/>
-			<Button variant='outline-secondary' id='button-addon2'>
-				Search
-			</Button>
-		</InputGroup>
+		<Form noValidate validated={props.validated} onSubmit={(event) => fetchSearch(event, props.setValidated, props.searchQuery)}>
+			<InputGroup className='searchbar-home'>
+				<Form.Control
+					type='text'
+					placeholder="Search drink..."
+					aria-label="Search drink..."
+					aria-describedby='basic-addon2'
+					onChange={({target:{value}}) => props.setSearchQuery(value)}
+					value={props.searchQuery}
+					required
+				/>
+				<Button type="submit" variant='outline-secondary' id='button-addon2'>
+					Search
+				</Button>
+				<Form.Control.Feedback type="invalid">
+              		Please search for a drink.
+            	</Form.Control.Feedback>
+			</InputGroup>
+		</Form>
 	);
 }
 
