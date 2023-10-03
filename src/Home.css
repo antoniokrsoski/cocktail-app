@@ -22,10 +22,9 @@
 
 
 .carousel {
-    margin-top: 20px;
     position: relative;
     aspect-ratio: 2;
-
+    width: 100vh; 
 }
 
 .img-ratio {
@@ -34,6 +33,7 @@
     aspect-ratio: 2;
     object-fit: cover;
     object-position: 100% 10%;
+    filter: brightness(65%);
 }
 
 .searchbar-home {
@@ -41,3 +41,24 @@
     position: relative;
     width: 30vh !important;
 }
+
+.drink-title{
+    font-family: Calibri;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: bolder;
+}
+
+.drink-text{
+    font-family: Calibri;
+    font-size: 20px;
+    font-style: normal;
+}
+
+.align-left {
+    text-align: left;
+    margin-left: 375px;
+    font-weight: bold;
+    font-size: 24px;
+}
+
