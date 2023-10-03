@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import App from './App';
 import Home from "./Home.js"
 import PageNotFound from "./PageNotFound.js";
+import carouselLoader from "./carouselLoader.js";
 
 const router = createBrowserRouter([
   {
@@ -13,7 +14,8 @@ const router = createBrowserRouter([
       },
       {
         index: true,
-        element: <Home />
+        element: <Home />,
+        loader: carouselLoader,
       } 
     ]
   },
