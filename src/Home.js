@@ -4,6 +4,7 @@ import Image from 'react-bootstrap/Image';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
+import CocktailList from './CocktailList';
 
 export default function Home() {
 	return (
@@ -25,6 +26,7 @@ export default function Home() {
 					<CarouselSlide />
 				</div>
 			</div>
+			<CocktailList/>
 		</div>
 	);
 }
