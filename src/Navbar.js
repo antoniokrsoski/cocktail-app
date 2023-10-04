@@ -7,7 +7,7 @@ import fetchSearch from './fetchSearch';
 
 export default function Navbar() {
 	return (
-		<nav className='navbar bg-white'>
+		<nav className='navbar bg-secondary'>
 			<div className='container-fluid'>
 				<a className='navbar-brand' href='#'>
 					<img
@@ -36,7 +36,7 @@ function SearchBar() {
 					aria-label='Search drink...'
 					aria-describedby='basic-addon2'
 				/>
-				<Button variant='outline-secondary' id='button-addon2'>
+				<Button variant='outline-primary' id='button-addon2'>
 					Search
 				</Button>
 			</InputGroup>
