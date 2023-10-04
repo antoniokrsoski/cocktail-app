@@ -26,15 +26,14 @@ export default function Navbar() {
 	);
 }
 
-
 function SearchBar() {
 	return (
 		<form>
 			<InputGroup className='searchbar-nav'>
 				<Form.Control
 					type='text'
-					placeholder="Search drink..."
-					aria-label="Search drink..."
+					placeholder='Search drink...'
+					aria-label='Search drink...'
 					aria-describedby='basic-addon2'
 				/>
 				<Button variant='outline-secondary' id='button-addon2'>
@@ -44,6 +43,3 @@ function SearchBar() {
 		</form>
 	);
 }
-
-
-

@@ -39,7 +39,7 @@ export default function CocktailList() {
 		},
 	];
 	return (
-		<Container className='pt-4 mt-4'>
+		<Container className='pt-4 mt-4 mb-4'>
 			<div className='row'>
 				{cards.map((card) => (
 					<div className='col-12 col-md-4' key={card.title}>
