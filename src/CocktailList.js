@@ -40,23 +40,25 @@ export default function CocktailList() {
 	];
 	return (
 		<Container className='pt-4 mt-4'>
-			<div className='d-flex flex-wrap flex-row w-100'>
+			<div className='row'>
 				{cards.map((card) => (
-					<Card className='m-2 w-50' key={card.title} style={{width: '18rem'}}>
-						<Card.Img src={card.src} variant='top'></Card.Img>
-						<Card.Title
-							className='mt-3'
-							style={{textAlign: 'left', paddingLeft: '10px'}}
-						>
-							{card.title}
-						</Card.Title>
-						<Card.Text
-							className='mt-3'
-							style={{textAlign: 'left', paddingLeft: '10px'}}
-						>
-							{card.description}
-						</Card.Text>
-					</Card>
+					<div className='col-12 col-md-4' key={card.title}>
+						<Card className='mt-4 mb-4 m-2 w-4 '>
+							<Card.Img src={card.src} variant='top'></Card.Img>
+							<Card.Title
+								className='mt-3'
+								style={{textAlign: 'left', paddingLeft: '10px'}}
+							>
+								{card.title}
+							</Card.Title>
+							<Card.Text
+								className='mt-3'
+								style={{textAlign: 'left', paddingLeft: '10px'}}
+							>
+								{card.description}
+							</Card.Text>
+						</Card>
+					</div>
 				))}
 			</div>
 		</Container>
