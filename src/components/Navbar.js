@@ -1,21 +1,15 @@
 import './custom.scss';
 import './Navbar.css';
 import SearchBar from './SearchBar';
+import { Link } from 'react-router-dom';
 
 export default function Navbar() {
 	return (
 		<nav className='navbar bg-secondary'>
 			<div className='container-fluid'>
-				<a className='navbar-brand' href='#'>
-					<img
-						src='/docs/5.3/assets/brand/bootstrap-logo.svg'
-						alt='Logo'
-						width='40'
-						height='30'
-						className='d-inline-block align-text-top'
-					/>
-					The Cocktail NavBar
-				</a>
+				<Link to="/" className='navbar-brand' href='#'>
+					The Cocktail Bar
+				</Link>
 
 				<SearchBar
 					variant={'outline-primary'}

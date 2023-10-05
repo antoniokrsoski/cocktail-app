@@ -1,11 +1,11 @@
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
-import {useState} from 'react';
-import {useNavigate} from 'react-router-dom';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export default function SearchBar(props) {
-    const [validated, setValidated] = useState(false);
+	const [validated, setValidated] = useState(false);
 	const [searchQuery, setSearchQuery] = useState('');
 	const navigate = useNavigate();
 
@@ -16,15 +16,19 @@ export default function SearchBar(props) {
 		if (searchQuery === "") {
 			setValidated(true);
 		} else {
+			setValidated(false);
 			navigate("/search-results/" + searchQuery);
+
 		}
 	}
 
+
+
 	return (
-		<Form 
-            noValidate
-            validated={validated}
-            onSubmit={isValid}
+		<Form
+			noValidate
+			validated={validated}
+			onSubmit={isValid}
 		>
 			<InputGroup className={props.className + " rightside-rounded"}>
 				<Form.Control
@@ -32,7 +36,7 @@ export default function SearchBar(props) {
 					placeholder='Search drink...'
 					aria-label='Search drink...'
 					aria-describedby='basic-addon2'
-                    onChange={({target: {value}}) => setSearchQuery(value)}
+					onChange={({ target: { value } }) => setSearchQuery(value)}
 					value={searchQuery}
 					required
 				/>
@@ -40,9 +44,13 @@ export default function SearchBar(props) {
 					Search
 				</Button>
 
-                <Form.Control.Feedback type='invalid'>
-					Please search for a drink.
-				</Form.Control.Feedback>
+				{props.className === "searchbar-home" ?
+					<Form.Control.Feedback type='invalid'>
+						Please search for a drink.
+					</Form.Control.Feedback>
+					: <></>
+				}
+
 			</InputGroup>
 		</Form>
 	);
