@@ -9,7 +9,8 @@ export default function SearchResult() {
     const drinks = useLoaderData();
     const { searchQuery } = useParams();
     const navigate = useNavigate();
-
+    // todo fix looping by checking history 
+    // ? https://reactrouter.com/en/main/start/concepts#history-and-locations
     useEffect(() => {
         let shouldNavigate = drinks.length === 1;
         if (shouldNavigate) {
