@@ -1,19 +1,14 @@
 import './Home.css';
 import Carousel from 'react-bootstrap/Carousel';
 import Image from 'react-bootstrap/Image';
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
-import InputGroup from 'react-bootstrap/InputGroup';
 import CocktailList from './CocktailList';
-import { useLoaderData, useNavigate } from 'react-router-dom';
-import fetchSearch from './fetchSearch';
-import { useState } from 'react';
+import {useLoaderData, useNavigate} from 'react-router-dom';
+import {useState} from 'react';
+import SearchBar from './SearchBar';
 
 export default function Home() {
 	const drinks = useLoaderData();
 	const naviagate = useNavigate();
-	const [validated, setValidated] = useState(false);
-	const [searchQuery, setSearchQuery] = useState('');
 	return (
 		<>
 			<div className='container-fluid'>
@@ -29,10 +24,6 @@ export default function Home() {
 					</div>
 					<div className='d-flex justify-content-center'>
 						<SearchBar
-							validated={validated}
-							setValidated={setValidated}
-							searchQuery={searchQuery}
-							setSearchQuery={setSearchQuery}
 							naviagate={naviagate}
 						/>
 					</div>
@@ -78,17 +69,7 @@ function CarouselItem(drink) {
 	);
 }
 
-function SearchBar(props) {
-	function isValid(event) {
-		event.preventDefault();
-		event.stopPropagation();
-		if (props.searchQuery === "") {
-			props.setValidated(true);
-		} else {
-			props.naviagate("/search-results/" + props.searchQuery);
-		}
-	}
-
+/*function SearchBar(props) {
 	return (
 		<Form
 			noValidate
@@ -115,4 +96,4 @@ function SearchBar(props) {
 			</InputGroup>
 		</Form>
 	);
-}
+}*/
