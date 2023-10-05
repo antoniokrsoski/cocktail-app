@@ -17,7 +17,7 @@ export default function Navbar() {
 					The Cocktail NavBar
 				</a>
 
-				<SearchBar 
+				<SearchBar
 					variant={'outline-primary'}
 					className={"searchbar-nav"}
 				/>
