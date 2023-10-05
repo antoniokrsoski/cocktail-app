@@ -3,7 +3,7 @@ import { useLoaderData, useParams, useNavigate } from "react-router-dom";
 import Card from 'react-bootstrap/Card';
 import Container from 'react-bootstrap/Container';
 import { useEffect } from "react";
-
+import "./SearchResult.css"
 
 export default function SearchResult() {
     const drinks = useLoaderData();
@@ -23,8 +23,8 @@ export default function SearchResult() {
 
     return (
         <>
-            <div>Search results: {searchQuery}</div>
-            {drinks.length > 0 ? <Results drinks={drinks} /> : <div>No results</div>}
+            <div className="result-text">Search results: {searchQuery}</div>
+            {drinks.length > 0 ? <Results drinks={drinks} /> : <div className="result-text">No results</div>}
         </>
     );
 }
