@@ -11,8 +11,10 @@ export default function SearchBar(props) {
 	return (
 		<form
             noValidate
-            validated={validated}
+            validated={true}
             onSubmit={(event) => {
+                setValidated(true);
+                console.log('inuti search bar');
                 if (!searchQuery) {
                     // Set isInvalid to true when searchQuery is empty
                     setSearchQuery('');
@@ -33,8 +35,10 @@ export default function SearchBar(props) {
                     onChange={({target: {value}}) => setSearchQuery(value)}
 					value={searchQuery}
 					required
-                    isInvalid={!searchQuery&&validated}
+
 				/>
+
+                
                 <Form.Control.Feedback type='invalid'>
 					Please search for a drink.
 				</Form.Control.Feedback>
