@@ -1,7 +1,6 @@
-
 export default async function carouselLoader() {
     const drinks = Promise.all(
-        Array.from({length: 10}, _ => "https://www.thecocktaildb.com/api/json/v1/1/random.php")
+        Array.from({ length: 10 }, _ => "https://www.thecocktaildb.com/api/json/v1/1/random.php")
             .map(url => safeFetchJson(url))
             .reduce((acc, curr) => acc.concat(curr), [])
     ).then(drinks => drinks.map(drink => drink["drinks"][0]));
