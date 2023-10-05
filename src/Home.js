@@ -95,12 +95,13 @@ function SearchBar(props) {
 					value={props.searchQuery}
 					required
 				/>
-				<Button type='submit' variant='outline-secondary' id='button-addon2'>
-					Search
-				</Button>
 				<Form.Control.Feedback type='invalid'>
 					Please search for a drink.
 				</Form.Control.Feedback>
+
+				<Button type='submit' variant='primary' id='button-addon2'>
+					Search
+				</Button>
 			</InputGroup>
 		</Form>
 	);
