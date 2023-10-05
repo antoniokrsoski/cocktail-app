@@ -2,13 +2,11 @@ import './Home.css';
 import Carousel from 'react-bootstrap/Carousel';
 import Image from 'react-bootstrap/Image';
 import CocktailList from './CocktailList';
-import {useLoaderData, useNavigate} from 'react-router-dom';
-import {useState} from 'react';
+import { useLoaderData } from 'react-router-dom';
 import SearchBar from './SearchBar';
 
 export default function Home() {
 	const drinks = useLoaderData();
-	const naviagate = useNavigate();
 	return (
 		<>
 			<div className='container-fluid'>
@@ -23,9 +21,7 @@ export default function Home() {
 						</p>
 					</div>
 					<div className='d-flex justify-content-center'>
-						<SearchBar
-							naviagate={naviagate}
-						/>
+						<SearchBar className={"searchbar-home"} />
 					</div>
 
 					<p className='text align-left'>Recommended drinks</p>
@@ -68,32 +64,3 @@ function CarouselItem(drink) {
 		</Carousel.Item>
 	);
 }
-
-/*function SearchBar(props) {
-	return (
-		<Form
-			noValidate
-			validated={props.validated}
-			onSubmit={isValid}
-		>
-			<InputGroup className='searchbar-home'>
-				<Form.Control
-					type='text'
-					placeholder='Search drink...'
-					aria-label='Search drink...'
-					aria-describedby='basic-addon2'
-					onChange={({ target: { value } }) => props.setSearchQuery(value)}
-					value={props.searchQuery}
-					required
-				/>
-				<Form.Control.Feedback type='invalid'>
-					Please search for a drink.
-				</Form.Control.Feedback>
-
-				<Button type='submit' variant='primary' id='button-addon2'>
-					Search
-				</Button>
-			</InputGroup>
-		</Form>
-	);
-}*/
