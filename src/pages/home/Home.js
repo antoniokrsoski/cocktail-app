@@ -1,9 +1,9 @@
 import './Home.css';
 import Carousel from 'react-bootstrap/Carousel';
 import Image from 'react-bootstrap/Image';
-import CocktailList from './CocktailList';
+import CocktailList from '../../components/CocktailList';
 import { useLoaderData } from 'react-router-dom';
-import SearchBar from './SearchBar';
+import SearchBar from '../../components/SearchBar';
 
 export default function Home() {
 	const drinks = useLoaderData();
