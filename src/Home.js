@@ -5,12 +5,13 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import CocktailList from './CocktailList';
-import {useLoaderData} from 'react-router-dom';
+import { useLoaderData, useNavigate } from 'react-router-dom';
 import fetchSearch from './fetchSearch';
-import {useState} from 'react';
+import { useState } from 'react';
 
 export default function Home() {
 	const drinks = useLoaderData();
+	const naviagate = useNavigate();
 	const [validated, setValidated] = useState(false);
 	const [searchQuery, setSearchQuery] = useState('');
 	return (
@@ -32,6 +33,7 @@ export default function Home() {
 							setValidated={setValidated}
 							searchQuery={searchQuery}
 							setSearchQuery={setSearchQuery}
+							naviagate={naviagate}
 						/>
 					</div>
 
@@ -77,13 +79,21 @@ function CarouselItem(drink) {
 }
 
 function SearchBar(props) {
+	function isValid(event) {
+		event.preventDefault();
+		event.stopPropagation();
+		if (props.searchQuery === "") {
+			props.setValidated(true);
+		} else {
+			props.naviagate("/search-results/" + props.searchQuery);
+		}
+	}
+
 	return (
 		<Form
 			noValidate
 			validated={props.validated}
-			onSubmit={(event) =>
-				fetchSearch(event, props.setValidated, props.searchQuery)
-			}
+			onSubmit={isValid}
 		>
 			<InputGroup className='searchbar-home'>
 				<Form.Control
@@ -91,11 +101,11 @@ function SearchBar(props) {
 					placeholder='Search drink...'
 					aria-label='Search drink...'
 					aria-describedby='basic-addon2'
-					onChange={({target: {value}}) => props.setSearchQuery(value)}
+					onChange={({ target: { value } }) => props.setSearchQuery(value)}
 					value={props.searchQuery}
 					required
 				/>
-				<Button type='submit' variant='outline-secondary' id='button-addon2'>
+				<Button type='submit' variant='outline-primary' id='button-addon2'>
 					Search
 				</Button>
 				<Form.Control.Feedback type='invalid'>
