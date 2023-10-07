@@ -1,12 +1,12 @@
 import { createBrowserRouter } from "react-router-dom";
-import App from './App';
-import Home from "./Home.js"
-import PageNotFound from "./PageNotFound.js";
+import App from '../App';
+import Home from "../pages/home/Home.js"
+import PageNotFound from "../components/PageNotFound.js";
 import carouselLoader from "./carouselLoader.js";
-import SearchResult from "./SearchResult.js";
+import SearchResult from "../pages/results/SearchResult.js";
 import searchLoader from "./searchLoader.js";
 import cocktailLoader from "./cocktailLoader.js";
-import CocktailDetail from "./CocktailDetail.js";
+import SingleDrink from "../pages/singledrink/SingleDrink.js";
 
 const router = createBrowserRouter([
   {
@@ -21,7 +21,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/cocktail-details/:id",
-        element: <CocktailDetail />,
+        element: <SingleDrink />,
         loader: ({ params }) => {
           return cocktailLoader(params.id);
         },

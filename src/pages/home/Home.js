@@ -1,9 +1,9 @@
 import './Home.css';
 import Carousel from 'react-bootstrap/Carousel';
 import Image from 'react-bootstrap/Image';
-import CocktailList from './CocktailList';
+import CocktailList from '../../components/CocktailList';
 import { useLoaderData } from 'react-router-dom';
-import SearchBar from './SearchBar';
+import SearchBar from '../../components/SearchBar';
 
 export default function Home() {
 	const drinks = useLoaderData();
@@ -23,7 +23,8 @@ export default function Home() {
 					<div className='d-flex justify-content-center'>
 						<SearchBar className={"searchbar-home"} />
 					</div>
-					
+
+					<p className='text align-left'>Recommended drinks</p>
 					<div className='d-flex justify-content-center'>
 						<CarouselSlide drinks={drinks} />
 					</div>

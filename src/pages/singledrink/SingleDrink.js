@@ -2,7 +2,7 @@ import React from "react";
 import { useLoaderData, useParams, useNavigate } from "react-router-dom";
 import Card from 'react-bootstrap/Card';
 
-export default function CocktailDetail(props) {
+export default function SingleDrink(props) {
     const drink = useLoaderData();
     return (
         <div>
