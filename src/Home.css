@@ -5,7 +5,7 @@
     font-weight: 300;
     line-height: 120%;
     /* 38.4px */
-    margin-top: 50px;
+    margin-top: 30px;
 }
 
 
@@ -22,9 +22,11 @@
 
 
 .carousel {
+    margin-top: 20px;
     position: relative;
     aspect-ratio: 2;
     width: 100vh; 
+    border-radius: 30px;
 }
 
 .img-ratio {
@@ -34,10 +36,11 @@
     object-fit: cover;
     object-position: 100% 10%;
     filter: brightness(65%);
+    border-radius: 30px;
 }
 
 .searchbar-home {
-    margin-top: 20px;
+    margin-top: 10px;
     position: relative;
     width: 40vh !important;
 }
@@ -58,7 +61,7 @@
 .align-left {
     text-align: left;
     margin-left: 375px;
-    font-weight: bold;
-    font-size: 24px;
+    font-weight: lighter;
+    font-size: 20px;
 }
 

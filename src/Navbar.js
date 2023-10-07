@@ -9,9 +9,9 @@ export default function Navbar() {
 				<div className='row align-items-center'>
 					<div className='col-auto'>	
 						<img
-							src='/logo.png'
+							src='/drinklogo.png'
 							alt='Logo'
-							height='40'
+							height='50'
 							className='d-inline-block align-text-top'
 						/>
 					</div>
