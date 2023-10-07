@@ -26,7 +26,7 @@ export default function SearchBar(props) {
             validated={validated}
             onSubmit={isValid}
 		>
-			<InputGroup className={props.className + " rightside-rounded"}>
+			<InputGroup className={props.className}>
 				<Form.Control
 					type='text'
 					placeholder='Search drink...'
@@ -40,10 +40,10 @@ export default function SearchBar(props) {
 					Search
 				</Button>
 
-                <Form.Control.Feedback type='invalid'>
+			</InputGroup>
+			<Form.Control.Feedback type='invalid'>
 					Please search for a drink.
 				</Form.Control.Feedback>
-			</InputGroup>
 		</Form>
 	);
 }

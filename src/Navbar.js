@@ -6,20 +6,25 @@ export default function Navbar() {
 	return (
 		<nav className='navbar bg-secondary'>
 			<div className='container-fluid'>
-				<a className='navbar-brand' href='#'>
-					<img
-						src='/docs/5.3/assets/brand/bootstrap-logo.svg'
-						alt='Logo'
-						width='40'
-						height='30'
-						className='d-inline-block align-text-top'
-					/>
-					The Cocktail NavBar
-				</a>
+				<div className='row align-items-center'>
+					<div className='col-auto'>	
+						<img
+							src='/logo.png'
+							alt='Logo'
+							height='40'
+							className='d-inline-block align-text-top'
+						/>
+					</div>
 
+					<div className='col-auto'>
+						<a className='navbar-brand' href='#'>
+							The Cocktail NavBar
+						</a>
+					</div>
+				</div>
 				<SearchBar 
-					variant={'outline-primary'}
-					className={"searchbar-nav"}
+				variant={'outline-primary'}
+				className={"searchbar-nav"}
 				/>
 			</div>
 		</nav>
