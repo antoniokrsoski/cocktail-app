@@ -1,9 +1,9 @@
-export default async function searchLoader(query) {
-    console.log("searchLoader called with query: " + query);
+export default async function singleLoader(id) {
+    console.log("singleloader called with id: " + id);
     
-    return safeFetchJson("https://www.thecocktaildb.com/api/json/v1/1/search.php?s=" + query).then(res => {
-        const drinks = res["drinks"];
-        // cache em
+    return safeFetchJson("https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=" + id).then(res => {
+        const drinks = res["drinks"][0];
+        // console.log(drinks);
         return drinks;
     });
 }
