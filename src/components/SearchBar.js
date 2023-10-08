@@ -10,7 +10,6 @@ export default function SearchBar(props) {
 	const navigate = useNavigate();
 
 	function isValid(event) {
-		console.log("isValid");
 		event.preventDefault();
 		event.stopPropagation();
 		if (searchQuery === "") {

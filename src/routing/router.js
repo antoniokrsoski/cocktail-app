@@ -5,7 +5,7 @@ import PageNotFound from "../components/PageNotFound.js";
 import carouselLoader from "./carouselLoader.js";
 import SearchResult from "../pages/results/SearchResult.js";
 import searchLoader from "./searchLoader.js";
-import cocktailLoader from "./cocktailLoader.js";
+import singleLoader from "./singleLoader.js";
 import SingleDrink from "../pages/singledrink/SingleDrink.js";
 
 const router = createBrowserRouter([
@@ -18,12 +18,13 @@ const router = createBrowserRouter([
         loader: ({ params }) => {
           return searchLoader(params.searchQuery);
         },
+        key: ({ params }) => params.searchQuery,
       },
       {
-        path: "/cocktail-details/:id",
+        path: "/search-results/drink/:id",
         element: <SingleDrink />,
         loader: ({ params }) => {
-          return cocktailLoader(params.id);
+          return singleLoader(params.id);
         },
       },
       {

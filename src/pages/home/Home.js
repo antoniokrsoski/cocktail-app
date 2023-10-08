@@ -14,10 +14,9 @@ export default function Home() {
 					<div className='text-center'>
 						<p className='title'>Welcome to The Cocktail Bar</p>
 						<p className='text'>
-							This is a subtitle, here is some more text just to fill out this
-							little section so it looks kind of normal. This will include
-							<br /> some cute description or welcome message or something on
-							the main page.
+							Welcome to The Cocktail Bar – Your Ultimate Mixology Destination! <br/>Explore our world of exquisite cocktails, 
+							crafted just for you. Cheers to a memorable experience!
+
 						</p>
 					</div>
 					<div className='d-flex justify-content-center'>
