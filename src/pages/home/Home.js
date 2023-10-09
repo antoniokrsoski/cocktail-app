@@ -32,8 +32,6 @@ export default function Home() {
 			</div>
 			<div className='container-fluid'>
 				<RecentDrinks />
-				dsadfa-spin
-				<CocktailList className='mt-20' />
 			</div>
 		</>
 	);
