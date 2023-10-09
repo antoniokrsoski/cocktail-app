@@ -2,7 +2,7 @@ import './Home.css';
 import Carousel from 'react-bootstrap/Carousel';
 import Image from 'react-bootstrap/Image';
 import CocktailList from '../../components/CocktailList';
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, Link } from 'react-router-dom';
 import SearchBar from '../../components/SearchBar';
 
 export default function Home() {
@@ -48,17 +48,20 @@ function CarouselSlide(props) {
 function CarouselItem(drink) {
 	return (
 		<Carousel.Item key={drink.idDrink}>
-			<Image
-				className='img-ratio'
-				src={drink.strDrinkThumb}
-				text='This is text'
-			/>
-			<Carousel.Caption>
-				<h3 className='drink-title'>{drink.strDrink}</h3>
-				<p className='drink-text'>
-					{drink.strAlcoholic}, {drink.strCategory}, {drink.strGlass}
-				</p>
-			</Carousel.Caption>
+			<Link to={"/search-results/drink/" + drink.idDrink}>
+			
+				<Image
+					className='img-ratio'
+					src={drink.strDrinkThumb}
+					text='This is text'
+				/>
+				<Carousel.Caption>
+					<h3 className='drink-title'>{drink.strDrink}</h3>
+					<p className='drink-text'>
+						{drink.strAlcoholic}, {drink.strCategory}, {drink.strGlass}
+					</p>
+				</Carousel.Caption>
+			</Link>
 		</Carousel.Item>
 	);
 }
