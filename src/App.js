@@ -1,6 +1,6 @@
 import './App.css';
 import Navbar from './components/Navbar';
-import { Outlet } from 'react-router-dom';
+import {Outlet} from 'react-router-dom';
 import Footer from './components/Footer';
 
 import ReduxTest from './ReduxTest';
@@ -11,7 +11,6 @@ function App() {
 			<Navbar />
 			<Outlet />
 			<Footer />
-			<ReduxTest />
 		</div>
 	);
 }
