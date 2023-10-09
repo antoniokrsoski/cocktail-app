@@ -24,7 +24,6 @@ export default function Home() {
 						<SearchBar className={"searchbar-home"} />
 					</div>
 
-					<p className='text align-left'>Recommended drinks</p>
 					<div className='d-flex justify-content-center'>
 						<CarouselSlide drinks={drinks} />
 					</div>
