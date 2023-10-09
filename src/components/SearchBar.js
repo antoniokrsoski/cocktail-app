@@ -42,15 +42,14 @@ export default function SearchBar(props) {
 				<Button type="submit" variant={props.variant} id='button-addon2' >
 					Search
 				</Button>
-
+			</InputGroup>
+			
 				{props.className === "searchbar-home" ?
 					<Form.Control.Feedback type='invalid'>
 						Please search for a drink.
 					</Form.Control.Feedback>
 					: <></>
 				}
-
-			</InputGroup>
 		</Form>
 	);
 }
