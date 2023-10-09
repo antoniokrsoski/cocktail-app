@@ -12,12 +12,12 @@ export default function SearchBar(props) {
 	function isValid(event) {
 		event.preventDefault();
 		event.stopPropagation();
-		if (searchQuery === "") {
-			setValidated(true);
-		} else {
-			setValidated(false);
+		if (searchQuery) {
+			setValidated(false); 
 			navigate("/search-results/" + searchQuery);
-
+			setSearchQuery('')
+		} else {
+			setValidated(true);
 		}
 	}
 
