@@ -22,11 +22,15 @@ class Cache {
 
     set(key, value) {
         // we do not want to store to much 
-        if (this.nbrItems > 10) {
+        if (this.nbrItems > 50) {
             this.clear();
         }
         this.nbrItems++;
         this.cache[key] = value;
+        if (Array.isArray(value)) {
+            // this could go over limit but it should be fine as it is not a lot of data per item
+            value.forEach(item => this.cache[item.idDrink] = item); 
+        }
         localStorage.setItem("cache", JSON.stringify(this.cache));
     }
 
