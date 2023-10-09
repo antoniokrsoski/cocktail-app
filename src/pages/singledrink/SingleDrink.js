@@ -1,6 +1,8 @@
-import React from "react";
-import { useLoaderData, useParams, useNavigate } from "react-router-dom";
+import React, {useEffect} from 'react';
+import {useLoaderData, useParams, useNavigate} from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
+import {useDispatch} from 'react-redux';
+import {addRecent} from '../../utils/recentSlice';
 import './SingleDrink.css'
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -11,6 +13,10 @@ export default function SingleDrink(props) {
     const drink = useLoaderData();
     console.log("drink", drink);
 
+	//console.log('drink', drink);
+
+	const dispatchRecent = useDispatch();
+
     const arr = [];
     for(let n=1; n<16; n++){
         let ind='strIngredient'+n;
@@ -18,6 +24,16 @@ export default function SingleDrink(props) {
     
         arr.push(drink[ind] ? drink[ind2] + drink[ind] : "");
     }
+
+	useEffect(() => {
+		// Adds two of each selected since we're in server dev mode
+		let add = true;
+		if (add) {
+			add = false;
+			dispatchRecent(addRecent(drink));
+		}
+		return () => (add = false);
+	}, []);
 
     return (
         // todo, fix the UI for the single drink card :)
@@ -48,13 +64,10 @@ export default function SingleDrink(props) {
     );
 }
 
-
 // {drink.strAlcoholic}
-
 
 // {drink.strCategory}
 
-
-// {drink.strGlass}    
+// {drink.strGlass}
 
 // {drink.strInstructions}

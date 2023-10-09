@@ -1,9 +1,9 @@
 import './Home.css';
 import Carousel from 'react-bootstrap/Carousel';
 import Image from 'react-bootstrap/Image';
-import CocktailList from '../../components/CocktailList';
-import { useLoaderData, Link } from 'react-router-dom';
+import {useLoaderData, Link} from 'react-router-dom';
 import SearchBar from '../../components/SearchBar';
+import RecentDrinks from '../../components/RecentDrinks';
 
 export default function Home() {
 	const drinks = useLoaderData();
@@ -14,22 +14,24 @@ export default function Home() {
 					<div className='text-center'>
 						<p className='title'>Welcome to The Cocktail Bar</p>
 						<p className='text'>
-							Welcome to The Cocktail Bar – Your Ultimate Mixology Destination! <br/>Explore our world of exquisite cocktails, 
-							crafted just for you. Cheers to a memorable experience!
-
+							Welcome to The Cocktail Bar – Your Ultimate Mixology Destination!{' '}
+							<br />
+							Explore our world of exquisite cocktails, crafted just for you.
+							Cheers to a memorable experience!
 						</p>
 					</div>
 					<div className='d-flex justify-content-center'>
-						<SearchBar className={"searchbar-home"} />
+						<SearchBar className={'searchbar-home'} />
 					</div>
-					<div className="text">Recommended drinks</div>
+					<div className='text'>Recommended</div>
 					<div className='d-flex justify-content-center'>
 						<CarouselSlide drinks={drinks} />
 					</div>
 				</div>
 			</div>
+			<div className="text">Recently viewed drinks</div>
 			<div className='container-fluid'>
-				<CocktailList />
+				<RecentDrinks />
 			</div>
 		</>
 	);
@@ -47,9 +49,8 @@ function CarouselSlide(props) {
 
 function CarouselItem(drink) {
 	return (
-		<Carousel.Item key={drink.idDrink + drink.strDrink}>
-			<Link to={"/search-results/drink/" + drink.idDrink}>
-			
+		<Carousel.Item key={drink.idDrink}>
+			<Link to={`/search-results/drink/${drink.idDrink}`}>
 				<Image
 					className='img-ratio'
 					src={drink.strDrinkThumb}
