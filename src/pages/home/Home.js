@@ -29,6 +29,7 @@ export default function Home() {
 					</div>
 				</div>
 			</div>
+			<div className="text">Recently viewed drinks</div>
 			<div className='container-fluid'>
 				<RecentDrinks />
 			</div>
