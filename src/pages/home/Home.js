@@ -22,7 +22,7 @@ export default function Home() {
 					<div className='d-flex justify-content-center'>
 						<SearchBar className={"searchbar-home"} />
 					</div>
-
+					<div className="text">Recommended drinks</div>
 					<div className='d-flex justify-content-center'>
 						<CarouselSlide drinks={drinks} />
 					</div>
@@ -47,7 +47,7 @@ function CarouselSlide(props) {
 
 function CarouselItem(drink) {
 	return (
-		<Carousel.Item key={drink.idDrink}>
+		<Carousel.Item key={drink.idDrink + drink.strDrink}>
 			<Link to={"/search-results/drink/" + drink.idDrink}>
 			
 				<Image

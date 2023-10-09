@@ -1,6 +1,6 @@
 import './custom.scss';
 import './Navbar.css';
-import SearchBar from '../SearchBar';
+import SearchBar from './SearchBar';
 import { Link } from 'react-router-dom';
 
 export default function Navbar() {
@@ -23,10 +23,7 @@ export default function Navbar() {
 						</Link>
 					</div>
 				</div>
-				<SearchBar 
-				variant={'outline-primary'}
-				className={"searchbar-nav"}
-				/>
+				<SearchBar variant={'outline-primary'} className={"searchbar-nav"}/>
 			</div>
 		</nav>
 	);
