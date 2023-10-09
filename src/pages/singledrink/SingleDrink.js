@@ -7,9 +7,9 @@ export default function SingleDrink(props) {
     console.log("drink", drink);
     return (
         // todo, fix the UI for the single drink card :)
-        <div>
-            <Card style={{ width: '18rem' }}>
-                <Card.Img variant="top" src={drink.strDrinkThumb} />
+        <div className='d-flex justify-content-center'>
+            <Card style={{ width: '28rem'}}>
+                <Card.Img variant="right" src={drink.strDrinkThumb} />
                 <Card.Body>
                     <Card.Title>{drink.strDrink}</Card.Title>
                     <Card.Text>
