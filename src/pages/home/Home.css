@@ -5,7 +5,7 @@
     font-weight: 300;
     line-height: 120%;
     /* 38.4px */
-    margin-top: 50px;
+    margin-top: 30px;
 }
 
 
@@ -22,9 +22,11 @@
 
 
 .carousel {
+    margin-top: 20px;
     position: relative;
     aspect-ratio: 2;
     width: 100vh; 
+    border-radius: 30px;
 }
 
 .img-ratio {
@@ -37,9 +39,9 @@
 }
 
 .searchbar-home {
-    margin-top: 20px;
+    margin-top: 10px;
     position: relative;
-    width: 30vh !important;
+    width: 40vh !important;
 }
 
 .drink-title{
@@ -56,9 +58,8 @@
 }
 
 .align-left {
-    text-align: left;
-    margin-left: 375px;
-    font-weight: bold;
-    font-size: 24px;
+
+    font-weight: lighter;
+    font-size: 20px;
 }
 

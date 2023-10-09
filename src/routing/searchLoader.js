@@ -1,5 +1,11 @@
 export default async function searchLoader(query) {
-    return safeFetchJson("https://www.thecocktaildb.com/api/json/v1/1/search.php?s=" + query).then(res => res["drinks"]);
+    console.log("searchLoader called with query: " + query);
+    
+    return safeFetchJson("https://www.thecocktaildb.com/api/json/v1/1/search.php?s=" + query).then(res => {
+        const drinks = res["drinks"];
+        // cache em
+        return drinks;
+    });
 }
 
 async function safeFetchJson(url) {
