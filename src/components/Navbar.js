@@ -1,6 +1,7 @@
 import './custom.scss';
 import './Navbar.css';
 import SearchBar from '../SearchBar';
+import { Link } from 'react-router-dom';
 
 export default function Navbar() {
 	return (
@@ -17,9 +18,9 @@ export default function Navbar() {
 					</div>
 
 					<div className='col-auto'>
-						<a className='navbar-brand' href='#'>
+						<Link className='navbar-brand' to='/'>
 							The Cocktail NavBar
-						</a>
+						</Link>
 					</div>
 				</div>
 				<SearchBar 
