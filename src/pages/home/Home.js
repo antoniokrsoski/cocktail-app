@@ -10,9 +10,9 @@ export default function Home() {
 	return (
 		<>
 			<div className='container-fluid'>
-				<div className='row'>
+				<div className='row mt-4'>
 					<div className='text-center'>
-						<p className='title'>Welcome to The Cocktail Bar</p>
+						<h2 className='title'>Welcome to The Cocktail Bar</h2>
 						<p className='text'>
 							Welcome to The Cocktail Bar – Your Ultimate Mixology Destination!{' '}
 							<br />
@@ -20,16 +20,15 @@ export default function Home() {
 							Cheers to a memorable experience!
 						</p>
 					</div>
-					<div className='d-flex justify-content-center'>
+					<div className='d-flex justify-content-center mb-4 pb-4'>
 						<SearchBar className={'searchbar-home'} />
 					</div>
-					<div className="text">Recommended drinks</div>
+					<h4>Recommended drinks</h4>
 					<div className='d-flex justify-content-center'>
 						<CarouselSlide drinks={drinks} />
 					</div>
 				</div>
 			</div>
-			<div className="text">Recently viewed drinks</div>
 			<div className='container-fluid'>
 				<RecentDrinks />
 			</div>
@@ -50,8 +49,7 @@ function CarouselSlide(props) {
 function CarouselItem(drink) {
 	return (
 		<Carousel.Item key={drink.idDrink + drink.strDrink}>
-			<Link to={"/search-results/drink/" + drink.idDrink}>
-			
+			<Link to={'/search-results/drink/' + drink.idDrink}>
 				<Image
 					className='img-ratio'
 					src={drink.strDrinkThumb}
