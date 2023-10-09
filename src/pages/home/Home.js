@@ -1,7 +1,6 @@
 import './Home.css';
 import Carousel from 'react-bootstrap/Carousel';
 import Image from 'react-bootstrap/Image';
-import CocktailList from '../../components/CocktailList';
 import {useLoaderData, Link} from 'react-router-dom';
 import SearchBar from '../../components/SearchBar';
 import RecentDrinks from '../../components/RecentDrinks';
