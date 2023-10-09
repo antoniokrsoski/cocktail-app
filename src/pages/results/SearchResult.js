@@ -51,22 +51,22 @@ function Results(props) {
                         <Card className='mt-4 mb-4 m-2 w-4 '>
                             <Link to={"/search-results/drink/" + drink.idDrink}>
                                 <Card.Img src={drink.strDrinkThumb} variant='top'></Card.Img>
+                            </Link>
                             
                                 <Card.Title
-                                    className='mt-3'
+                                    className='mt-3 result-text'
                                     style={{ textAlign: 'left', paddingLeft: '10px' }}
                                 >
                                     {drink.strDrink}
                                 </Card.Title>
-                            </Link>
-                            <Card.Text
-                                className='mt-3'
-                                style={{ textAlign: 'left', paddingLeft: '10px' }}
-                            >
-                                {/* {drink.strAlcoholic + ", " + drink.strCategory + ", " + drink.strGlass} */}
-                                {instructionToString(drink.strInstructions)}
-                            </Card.Text>
-                        </Card>
+                                <Card.Text
+                                    className='mt-3 result-text'
+                                    style={{ textAlign: 'left', paddingLeft: '10px' }}
+                                    >
+                                    {/* {drink.strAlcoholic + ", " + drink.strCategory + ", " + drink.strGlass} */}
+                                    {instructionToString(drink.strInstructions)}
+                                </Card.Text>
+                             </Card>
                     </div>
                 ))}
             </div>
