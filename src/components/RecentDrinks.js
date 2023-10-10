@@ -12,7 +12,7 @@ export default function RecentDrinks() {
 			<h4>Recent drinks</h4>
 			<div className='row'>
 				{[...recentValues].reverse().map((drink) => (
-					<div className='col-md-2' key={drink.idDrink}>
+					<div className='col-md-2' key={drink.idDrink + "recent"}>
 						<Card className='mt-4 mb-4 m-2 w-4 '>
 							<Link to={'/search-results/drink/' + drink.idDrink}>
 								<Card.Img src={drink.strDrinkThumb} variant='top'></Card.Img>

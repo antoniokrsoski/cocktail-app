@@ -23,7 +23,7 @@ export default function SingleDrink(props) {
 		let ind = 'strIngredient' + n;
 		let ind2 = 'strMeasure' + n;
 
-		arr.push(drink[ind] ? drink[ind2] + drink[ind] : '');
+		arr.push(drink[ind] ? (drink[ind2] ?? "") + drink[ind] : '');
 	}
 
 	useEffect(() => {
