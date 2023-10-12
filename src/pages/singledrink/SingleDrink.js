@@ -23,7 +23,7 @@ export default function SingleDrink(props) {
 		let ind = 'strIngredient' + n;
 		let ind2 = 'strMeasure' + n;
 
-		arr.push(drink[ind] ? (drink[ind2] ?? "") + drink[ind] : '');
+		arr.push(drink[ind] ? (drink[ind2] ?? '') + drink[ind] : '');
 	}
 
 	useEffect(() => {
@@ -51,16 +51,14 @@ export default function SingleDrink(props) {
 							<ListGroup className='bigcard' variant='flush'>
 								<ListGroup.Item>Ingredients</ListGroup.Item>
 
-								{arr.map((ingr) =>
-									ingr ? (
-										<ListGroup.Item>
+								{arr
+									.filter((ingr) => ingr.length > 0)
+									.map((ingr) => (
+										<ListGroup.Item key={ingr}>
 											{ingr}
 											{}
 										</ListGroup.Item>
-									) : (
-										<></>
-									),
-								)}
+									))}
 							</ListGroup>
 						</Col>
 
